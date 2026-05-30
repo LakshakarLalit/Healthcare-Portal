@@ -1,11 +1,8 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
 from .models import Doctor
 from .serializer import DoctorSerializer
-
-# Create your views here.
 
 @api_view(['GET'])
 def getAll(request):
@@ -19,14 +16,13 @@ def getById(request, id):
         doctor = Doctor.objects.get(id=id)
         data = DoctorSerializer(doctor).data
         return Response({"message": "Success", "data": data})
-    
     except Doctor.DoesNotExist:
         return Response({"message": "Not Found", "data": {}})
 
 @api_view(['POST'])
 def addDoctor(request):
     newDoctor = request.data
-    doctor = DoctorSerializer(data = newDoctor)
+    doctor = DoctorSerializer(data=newDoctor)
     if doctor.is_valid():
         doctor.save()
         return Response({"message": "Successfully Added", "data": doctor.data})

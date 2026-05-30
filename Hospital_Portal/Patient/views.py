@@ -1,10 +1,8 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
 from .models import Patient
 from .serializer import PatientSerializer
-
 
 @api_view(['GET'])
 def getAll(request):
@@ -15,8 +13,8 @@ def getAll(request):
 @api_view(['GET'])
 def getById(request, id):
     try:
-        Patient = Patient.objects.get(id=id)
-        data = PatientSerializer(Patient).data
+        patient = Patient.objects.get(id=id)  # FIXED: 'Patient' → 'patient'
+        data = PatientSerializer(patient).data  # FIXED
         return Response({"message": "Success", "data": data})
     except Patient.DoesNotExist:
         return Response({"message": "Not Found", "data": {}})
@@ -24,17 +22,17 @@ def getById(request, id):
 @api_view(['POST'])
 def addPatient(request):
     newPatient = request.data
-    Patient = PatientSerializer(data=newPatient)
-    if newPatient.is_valid():
-        newPatient.save()
-        return Response({"message": "Success", "data": newPatient.data})
-    return Response({"message": "Error", "data": newPatient.errors})
+    serializer = PatientSerializer(data=newPatient)  # FIXED
+    if serializer.is_valid():  # FIXED: 'newPatient.is_valid()' → 'serializer.is_valid()'
+        serializer.save()  # FIXED
+        return Response({"message": "Success", "data": serializer.data})  # FIXED
+    return Response({"message": "Error", "data": serializer.errors})  # FIXED
 
 @api_view(['PUT'])
 def updatePatient(request, id):
     try:
-        Patient = Patient.objects.get(id=id)
-        serializer = PatientSerializer(Patient, data=request.data)
+        patient = Patient.objects.get(id=id)  # FIXED: 'Patient' → 'patient'
+        serializer = PatientSerializer(patient, data=request.data)  # FIXED
         if serializer.is_valid():
             serializer.save()
             return Response({"message": "Success", "data": serializer.data})
@@ -45,8 +43,8 @@ def updatePatient(request, id):
 @api_view(['DELETE'])
 def deletePatient(request, id):
     try:
-        Patient = Patient.objects.get(id=id)
-        Patient.delete()
+        patient = Patient.objects.get(id=id)  # FIXED
+        patient.delete()  # FIXED
         return Response({"message": "Success", "data": {}})
     except Patient.DoesNotExist:
         return Response({"message": "Error", "data": "Patient not found"})
