@@ -22,17 +22,17 @@ def getById(request, id):
 @api_view(['POST'])
 def addPatient(request):
     newPatient = request.data
-    serializer = PatientSerializer(data=newPatient)  # FIXED
-    if serializer.is_valid():  # FIXED: 'newPatient.is_valid()' → 'serializer.is_valid()'
-        serializer.save()  # FIXED
-        return Response({"message": "Success", "data": serializer.data})  # FIXED
-    return Response({"message": "Error", "data": serializer.errors})  # FIXED
+    serializer = PatientSerializer(data=newPatient) 
+    if serializer.is_valid(): 
+        serializer.save()
+        return Response({"message": "Success", "data": serializer.data}) 
+    return Response({"message": "Error", "data": serializer.errors}) 
 
 @api_view(['PUT'])
 def updatePatient(request, id):
     try:
-        patient = Patient.objects.get(id=id)  # FIXED: 'Patient' → 'patient'
-        serializer = PatientSerializer(patient, data=request.data)  # FIXED
+        patient = Patient.objects.get(id=id)
+        serializer = PatientSerializer(patient, data=request.data) 
         if serializer.is_valid():
             serializer.save()
             return Response({"message": "Success", "data": serializer.data})
@@ -43,8 +43,8 @@ def updatePatient(request, id):
 @api_view(['DELETE'])
 def deletePatient(request, id):
     try:
-        patient = Patient.objects.get(id=id)  # FIXED
-        patient.delete()  # FIXED
+        patient = Patient.objects.get(id=id) 
+        patient.delete() 
         return Response({"message": "Success", "data": {}})
     except Patient.DoesNotExist:
         return Response({"message": "Error", "data": "Patient not found"})
