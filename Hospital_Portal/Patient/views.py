@@ -13,8 +13,8 @@ def getAll(request):
 @api_view(['GET'])
 def getById(request, id):
     try:
-        patient = Patient.objects.get(id=id)  # FIXED: 'Patient' → 'patient'
-        data = PatientSerializer(patient).data  # FIXED
+        patient = Patient.objects.get(id=id)  
+        data = PatientSerializer(patient).data  
         return Response({"message": "Success", "data": data})
     except Patient.DoesNotExist:
         return Response({"message": "Not Found", "data": {}})
