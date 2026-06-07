@@ -3,12 +3,13 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Doctor
 from .serializer import DoctorSerializer
+from django.shortcuts import render
 
 @api_view(['GET'])
 def getAll(request):
     allDoctor = Doctor.objects.all()
     data = DoctorSerializer(allDoctor, many=True).data
-    return Response({'message': "Success", "data": data})
+    return Response(request, '../frontend/Doctor/Doctor.html', {'message': "Success", "data": data})
 
 @api_view(['GET'])
 def getById(request, id):

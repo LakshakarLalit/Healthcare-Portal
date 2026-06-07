@@ -1,0 +1,182 @@
+/* Appointment Page Component Stylesheet */
+
+header {
+    text-align: center;
+    padding: 3rem 1.5rem 4rem 1.5rem;
+    background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+    border-bottom: 1px solid #bae6fd;
+}
+
+header h1 {
+    font-size: 2.75rem;
+    color: #0f172a;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #475569;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Appointment Form Container */
+.appointment-container {
+    max-width: 700px;
+    margin: -2.5rem auto 5rem auto;
+    padding: 0 1.5rem;
+}
+
+.appointment-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f1f5f9;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Input & Select Styling */
+.form-group input,
+.form-group select {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: inherit;
+    width: 100%;
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0891b2;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
+}
+
+/* Custom styles for time/date inputs to look clean */
+.form-group input[type="date"],
+.form-group input[type="time"] {
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 30px;
+    background-image: linear-gradient(135deg, rgb(0, 208, 255) 0%, rgb(5, 176, 176) 100%);
+    color: white;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(5, 176, 176, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(5, 176, 176, 0.45);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Success Modal / Notification */
+.success-message {
+    display: none;
+    background-color: #ecfeff;
+    border: 1px solid #bae6fd;
+    color: #0891b2;
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+    header {
+        padding: 2.5rem 1rem 3.5rem 1rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 0.95rem;
+    }
+    
+    .appointment-container {
+        margin-top: -1.75rem;
+        padding: 0 1rem;
+    }
+    
+    .appointment-form {
+        padding: 1.75rem;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+}

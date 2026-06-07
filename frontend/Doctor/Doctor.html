@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Care Hospital - Our Doctors</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./Doctor.css">
+</head>
+<body>
+
+    <nav>
+        <h2>The Care Hospital</h2>
+        <ul>
+            <li style="--t:0.2s;"><a href="../Home/Home.html">Home</a></li>
+            <li style="--t:0.4s;"><a href="../Doctor/Doctor.html">Doctors</a></li>
+            <li style="--t:0.6s;"><a href="../Patients/Patients.html">Patients</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Meet Our Specialists</h1>
+        <p>Book appointments with highly qualified and experienced healthcare professionals dedicated to your wellness.</p>
+    </header>
+
+    <!-- Search and Filter Bar -->
+    <div class="search-filter-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search doctors by name or specialty...">
+        <select>
+            <option value="">All Specialties</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="pediatrics">Pediatrics</option>
+            <option value="neurology">Neurology</option>
+            <option value="dermatology">Dermatology</option>
+            <option value="orthopedics">Orthopedics</option>
+            <option value="general">General Medicine</option>
+        </select>
+    </div>
+
+    <!-- Admin Actions -->
+    <div id="admin-actions" style="display: none; max-width: 650px; margin: -1rem auto 2rem auto; text-align: right; padding: 0 1.5rem;">
+        <button id="add-doctor-btn" style="background-image: linear-gradient(135deg, #0891b2 0%, #0369a1 100%); color: white; padding: 0.6rem 1.5rem; border-radius: 30px; border: none; font-weight: 700; font-size: 0.95rem; cursor: pointer; box-shadow: 0 4px 12px rgba(8,145,178,0.2); transition: all 0.3s ease;">➕ Register Doctor</button>
+    </div>
+
+    <!-- Add Doctor Modal -->
+    <div id="doctor-modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);">
+        <div style="background-color: white; margin: 4% auto; padding: 2.25rem; border: 1px solid #f1f5f9; width: 90%; max-width: 480px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); box-sizing: border-box; font-family: inherit;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem;">
+                <h2 style="font-size: 1.4rem; color: #0f172a; font-weight: 800; margin: 0;">Register Specialist</h2>
+                <span id="close-modal" style="color: #94a3b8; font-size: 1.75rem; font-weight: bold; cursor: pointer; transition: color 0.2s ease;">&times;</span>
+            </div>
+            <form id="add-doctor-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div>
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Doctor Name</label>
+                    <input type="text" id="doc-name" placeholder="e.g. Dr. Ramesh Sharma" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 0.95rem; box-sizing: border-box; transition: border 0.2s ease;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Specialty</label>
+                        <select id="doc-specialty" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 0.95rem; box-sizing: border-box; background-color: white;">
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Dermatology">Dermatology</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="General Medicine">General Medicine</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Exp (Years)</label>
+                        <input type="number" id="doc-exp" min="0" placeholder="e.g. 12" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 0.95rem; box-sizing: border-box;">
+                    </div>
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Degrees / Qualifications</label>
+                    <input type="text" id="doc-degree" placeholder="e.g. MBBS, MD, DM" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 0.95rem; box-sizing: border-box;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Hospital Name</label>
+                    <input type="text" id="doc-hospital" placeholder="e.g. Metro Hospital" required style="width: 100%; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 0.95rem; box-sizing: border-box;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">Avatar Image URL (Optional)</label>
+                    <input type="url" id="doc-avatar" placeholder="https://images.unsplash.com/..." style="width: 100%; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 0.95rem; box-sizing: border-box;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #475569; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;">About / Biography</label>
+                    <textarea id="doc-about" rows="3" placeholder="Consultant Cardiologist specializing in heart failure..." style="width: 100%; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid #e2e8f0; outline: none; font-size: 0.95rem; box-sizing: border-box; resize: vertical; font-family: inherit;"></textarea>
+                </div>
+                <button type="submit" style="background-image: linear-gradient(135deg, #0891b2 0%, #0369a1 100%); color: white; padding: 0.85rem; border-radius: 30px; border: none; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 4px 12px rgba(8,145,178,0.2); margin-top: 0.5rem; transition: transform 0.2s ease;">Add Doctor</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="doctorContainer">
+
+
+    </div>
+    
+    <script src="../navbar.js"></script>
+    <script src="./Doctor.js"></script>
+</body>
+</html>

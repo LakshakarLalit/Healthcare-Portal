@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Care Hospital - Access Portal</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./Login.css">
+</head>
+<body>
+    <div class="login-page-container">
+        <div class="glass-login-card">
+            <div class="login-header">
+                <h2>The Care Hospital</h2>
+                <p>Healthcare Portal Gateway</p>
+            </div>
+
+            <!-- Tab Switchers -->
+            <div class="login-tabs">
+                <button class="tab-btn active" id="btn-patient-tab">Patient Portal</button>
+                <button class="tab-btn" id="btn-admin-tab">Admin Panel</button>
+            </div>
+
+            <!-- Form Body -->
+            <div class="form-wrapper">
+                <!-- Patient Form -->
+                <form id="patient-login-form" class="login-form active">
+                    <div class="form-group">
+                        <label for="p-name">Full Name</label>
+                        <input type="text" id="p-name" placeholder="Enter your registered name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="p-phone">Mobile Number</label>
+                        <input type="tel" id="p-phone" placeholder="Enter 10-digit number" pattern="[0-9]{10}" maxlength="10" required>
+                    </div>
+
+                    <!-- Hidden Fields for New Patient Registration -->
+                    <div id="registration-fields" class="reg-fields-hidden">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="p-age">Age</label>
+                                <input type="number" id="p-age" min="0" max="120" placeholder="Age">
+                            </div>
+                            <div class="form-group">
+                                <label for="p-gender">Gender</label>
+                                <select id="p-gender">
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="reg-notice">💡 Phone number not registered. Please enter age and gender to complete your one-time sign-up.</p>
+                    </div>
+
+                    <div id="patient-message" class="message-banner"></div>
+                    <button type="submit" class="submit-btn" id="patient-submit-btn">Access Account</button>
+                </form>
+
+                <!-- Admin Form -->
+                <form id="admin-login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="a-username">Admin Username</label>
+                        <input type="text" id="a-username" value="admin" placeholder="Enter admin username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="a-password">Access PIN</label>
+                        <input type="password" id="a-password" value="0000000000" placeholder="Enter password/pin" required>
+                    </div>
+
+                    <div id="admin-message" class="message-banner"></div>
+                    <button type="submit" class="submit-btn">Login as Administrator</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Login.js"></script>
+</body>
+</html>

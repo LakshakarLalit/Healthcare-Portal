@@ -9,3 +9,4 @@ class Patient(models.Model):
     gender = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
+    phone = models.CharField(max_length=10, default="")

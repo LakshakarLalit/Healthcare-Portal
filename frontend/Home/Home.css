@@ -1,0 +1,291 @@
+/* Home Page Component Stylesheet */
+
+main {
+    display: flex;
+    align-items: center;
+    height: 85vh;
+    padding: 0 5%;
+    background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+    overflow: hidden;
+}
+
+#Banner {
+    height: 100%;
+    width: 50%;
+    background-image: url("https://png.pngtree.com/png-clipart/20230927/original/pngtree-photo-men-doctor-physician-chest-smiling-png-image_13143575.png");
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.05));
+}
+
+#Banner-Content {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#content {
+    width: 100%;
+    max-width: 580px;
+}
+
+#content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+#content span {
+    background: linear-gradient(to right, rgb(0, 208, 255), rgb(5, 176, 176));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#content h3 {
+    margin-top: 1.5rem;
+    font-size: 1.35rem;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+#content p {
+    margin-top: 1.25rem;
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.btns {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+}
+
+.btns button {
+    padding: 0.75rem 1.75rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btns button:first-of-type {
+    background-image: linear-gradient(135deg, rgb(0, 208, 255) 0%, rgb(5, 176, 176) 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(5, 176, 176, 0.35);
+}
+
+.btns button:first-of-type:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(5, 176, 176, 0.45);
+}
+
+.btns button:first-of-type:active {
+    transform: translateY(0);
+}
+
+.btns button:last-of-type {
+    background-color: white;
+    color: #0f172a;
+    border: 2px solid #0f172a;
+}
+
+.btns button:last-of-type:hover {
+    transform: translateY(-2px);
+    background-color: #0f172a;
+    color: white;
+    box-shadow: 0 6px 15px rgba(15, 23, 42, 0.25);
+}
+
+.btns button:last-of-type:active {
+    transform: translateY(0);
+}
+
+/* Services Header */
+#services-header {
+    text-align: center;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#services-header h2 {
+    font-size: 2.25rem;
+    color: #0f172a;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+#services-header p {
+    font-size: 1.05rem;
+    color: #64748b;
+}
+
+/* Services Container */
+#services {
+    max-width: 1200px;
+    margin: 1rem auto 5rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f1f5f9;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+    border-color: #e2e8f0;
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+.service-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.35rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #0891b2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card button {
+    width: 100%;
+    margin-top: auto;
+    padding: 0.7rem 1.2rem;
+    border-radius: 30px;
+    border: 1.5px solid #0891b2;
+    background-color: transparent;
+    color: #0891b2;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #0891b2;
+    color: white;
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.2);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 4rem 1.5rem;
+        text-align: center;
+    }
+    
+    #Banner {
+        width: 100%;
+        height: 350px;
+        margin-top: 2rem;
+        background-position: center bottom;
+    }
+    
+    #Banner-Content {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .btns {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #content h1 {
+        font-size: 2.25rem;
+    }
+    
+    #content h3 {
+        font-size: 1.1rem;
+    }
+    
+    #content p {
+        font-size: 0.95rem;
+    }
+    
+    .btns {
+        flex-direction: column;
+        row-gap: 10px;
+        align-items: stretch;
+    }
+    
+    .btns button {
+        width: 100%;
+    }
+    
+    #services {
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+}

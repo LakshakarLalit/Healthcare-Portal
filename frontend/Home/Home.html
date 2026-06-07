@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Care Hospital - Healthcare Management System</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./Home.css">
+</head>
+<body>
+    <nav>
+        <h2>The Care Hospital</h2>
+        <ul>
+            <li style="--t:0.2s;"><a href="../Home/Home.html">Home</a></li>
+            <li style="--t:0.4s;"><a href="../Doctor/Doctor.html">Doctors</a></li>
+            <li style="--t:0.6s;"><a href="../Patients/Patients.html">Patients</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div id="Banner"></div>
+        <div id="Banner-Content">
+            <div id="content">
+                <h1>Welcome to <span>The Care Hospital</span></h1>
+                <h3>Book Appointments, Manage Prescriptions, and Access Health Records - All in One Place</h3>
+                <p>Your Reliable Health Partner. The Care Hospital connects you with premium care providers, simplifying your medical journeys, prescriptions, and follow-ups with leading specialists instantly.</p>
+                <div class="btns">
+                    <button onclick="window.location.href='../Doctor/Doctor.html'">Book Appointment</button>
+                    <button onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Explore Specialities</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="services-header">
+        <h2>Our Core Specialties</h2>
+        <p>Providing exceptional healthcare services across major clinical domains with specialized medical departments.</p>
+    </section>
+
+    <section id="services">
+
+       <!-- Service 1: Cardiology -->
+       <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Cardiology Care">
+                <div class="service-badge">Cardiology</div>
+            </div>
+            <div class="card-body">
+                <h3>Cardiology Care</h3>
+                <p>
+                    Advanced diagnostic and therapeutic cardiovascular care. Dedicated to preserving your heart health with top-tier procedures, therapies, and clinical advice.
+                </p>
+                <button onclick="window.location.href='../Doctor/Doctor.html'">Consult Specialist</button>
+            </div>
+       </div> 
+
+       <!-- Service 2: Pediatrics -->
+       <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&q=80" alt="Pediatric Care">
+                <div class="service-badge">Pediatrics</div>
+            </div>
+            <div class="card-body">
+                <h3>Pediatric Care</h3>
+                <p>
+                    Comprehensive medical care for infants, children, and adolescents. Providing vaccinations, developmental monitoring, and gentle pediatric support.
+                </p>
+                <button onclick="window.location.href='../Doctor/Doctor.html'">Consult Specialist</button>
+            </div>
+       </div> 
+
+       <!-- Service 3: Neurology -->
+       <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1559757175-5700def83abb?auto=format&fit=crop&w=600&q=80" alt="Neurology Care">
+                <div class="service-badge">Neurology</div>
+            </div>
+            <div class="card-body">
+                <h3>Neurology Care</h3>
+                <p>
+                    Expert diagnosis and treatment of disorders affecting the brain, spinal cord, and nervous system, using cutting-edge medical insights and research.
+                </p>
+                <button onclick="window.location.href='../Doctor/Doctor.html'">Consult Specialist</button>
+            </div>
+       </div> 
+
+       <!-- Service 4: Emergency Care -->
+       <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Emergency Care">
+                <div class="service-badge">Emergency Care</div>
+            </div>
+            <div class="card-body">
+                <h3>Emergency Medicine</h3>
+                <p>
+                    Round-the-clock emergency medical response and critical trauma services. Equipped with state-of-the-art emergency rooms for instant patient care.
+                </p>
+                <button onclick="window.location.href='../Doctor/Doctor.html'">Consult Specialist</button>
+            </div>
+       </div> 
+
+    </section>
+    
+    <script src="../navbar.js"></script>
+</body>
+</html>

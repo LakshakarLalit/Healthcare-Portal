@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Care Hospital - Appointment</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./Appointment.css">
+</head>
+<body>
+    <nav>
+        <h2>The Care Hospital</h2>
+        <ul>
+            <li style="--t:0.2s;"><a href="../Home/Home.html">Home</a></li>
+            <li style="--t:0.4s;"><a href="../Doctor/Doctor.html">Doctors</a></li>
+            <li style="--t:0.6s;"><a href="../Patients/Patients.html">Patients</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <h1>Schedule an Appointment</h1>
+        <p>Connect with our expert medical team. Fill in the details below to book your consultation instantly.</p>
+    </header>
+
+    <main class="appointment-container">
+        <form class="appointment-form">
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label for="doctor-select">Select a Doctor</label>
+                    <select id="doctor-select" required>
+                        <option value="" disabled selected>Choose a Doctor</option>
+                        <option value="Dr. Firoz Sharma">Dr. Firoz Sharma (Cardiology)</option>
+                        <option value="Dr. Ananya Iyer">Dr. Ananya Iyer (Pediatrics)</option>
+                        <option value="Dr. Vikram Roy">Dr. Vikram Roy (Neurology)</option>
+                        <option value="Dr. Sneha Kapoor">Dr. Sneha Kapoor (Dermatology)</option>
+                        <option value="Dr. Rahul Verma">Dr. Rahul Verma (Orthopedics)</option>
+                        <option value="Dr. Priya Patel">Dr. Priya Patel (General Medicine)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointment-date">Select a Date</label>
+                    <input type="date" id="appointment-date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointment-time">Select a Time</label>
+                    <input type="time" id="appointment-time" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="patient-name">Patient Name</label>
+                    <input type="text" id="patient-name" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patient-age">Patient Age</label>
+                    <input type="number" id="patient-age" min="0" max="120" placeholder="Enter age" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="patient-gender">Patient Gender</label>
+                    <select id="patient-gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="patient-symptoms">Symptoms / Health Concerns</label>
+                    <textarea id="patient-symptoms" placeholder="Describe symptoms, e.g., Chest pain, Cough, Fever, Migraine..." rows="3" required style="width: 100%; padding: 0.75rem; border: 1.5px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 0.95rem; resize: vertical; outline: none; transition: border-color 0.3s ease;"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Book Appointment</button>
+        </form>
+    </main>
+
+    <script src="../navbar.js"></script>
+    <script src="./Appointment.js"></script>
+</body>
+</html>

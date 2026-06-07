@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Care Hospital - Patients Database</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./Patients.css">
+</head>
+<body>
+
+    <nav>
+        <h2>The Care Hospital</h2>
+        <ul>
+            <li style="--t:0.2s;"><a href="../Home/Home.html">Home</a></li>
+            <li style="--t:0.4s;"><a href="../Doctor/Doctor.html">Doctors</a></li>
+            <li style="--t:0.6s;"><a href="../Patients/Patients.html">Patients</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Patient Admission Records</h1>
+        <p>Monitor and manage hospital admissions, status logs, diagnosis reports, and assigned care team specialists.</p>
+    </header>
+
+    <!-- Search and Filter Bar -->
+    <div class="search-filter-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Search patients by name, ID, or diagnosis...">
+        <select>
+            <option value="">All Statuses</option>
+            <option value="admitted">Admitted</option>
+            <option value="discharged">Discharged</option>
+            <option value="observation">Observation</option>
+            <option value="critical">Critical</option>
+        </select>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-section">
+        <div class="table-card">
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Patient Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Diagnosis</th>
+                            <th>Assigned Doctor</th>
+                            <th>Admission Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientTableBody">
+                        <!-- Dynamic rows will be injected here by Patients.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../navbar.js"></script>
+    <script src="./Patients.js"></script>
+</body>
+</html>

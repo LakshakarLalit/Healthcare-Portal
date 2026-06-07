@@ -1,0 +1,200 @@
+/* Login Component Stylesheet */
+
+.login-page-container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+    padding: 2rem 1.5rem;
+}
+
+.glass-login-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    width: 100%;
+    max-width: 440px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    animation: loginFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes loginFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #06b6d4 0%, #0db9b9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.25rem;
+}
+
+.login-header p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Tabs switcher */
+.login-tabs {
+    display: flex;
+    border-radius: 30px;
+    background: rgba(241, 245, 249, 0.8);
+    padding: 4px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 25px;
+    transition: var(--transition);
+}
+
+.tab-btn.active {
+    background-image: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
+}
+
+/* Form Styles */
+.form-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.login-form {
+    display: none;
+    flex-direction: column;
+}
+
+.login-form.active {
+    display: flex;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: 0.2px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border-color);
+    background: white;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--text-main);
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1rem;
+}
+
+/* Dynamic Sign Up Fields */
+.reg-fields-hidden {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reg-fields-visible {
+    max-height: 250px;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reg-notice {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0d9488;
+    background: #f0fdfa;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    margin-top: 0.75rem;
+    line-height: 1.4;
+    border-left: 3px solid #0d9488;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.85rem;
+    border-radius: 8px;
+    border: none;
+    background-image: var(--primary-gradient);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.25);
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(8, 145, 178, 0.35);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Message Banners */
+.message-banner {
+    display: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+    border: 1px solid;
+}
